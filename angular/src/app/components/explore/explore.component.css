@@ -1,0 +1,162 @@
+.searchdiv{
+    margin: 50px auto ;
+   
+   width: 800px;
+
+   
+}
+.search{
+
+    height:45px;
+    border: 2px solid #3f51b5;
+}
+
+.searchb{
+    
+   
+    margin-left: 350px;
+    margin-top: 10px;
+    height:40px;
+    background-color: #3f51b5;
+    color:white;
+    border: 2px solid #3f51b5;
+    transition: 0.3s;
+}
+
+.searchb:hover{
+   
+    box-shadow: 1px 1px 8px #888888;
+}
+
+.labRes{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    font-size: 22px;
+    margin: 50px;
+    font-style: oblique;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 750px;
+
+}
+.labRest{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    font-size: 22px;
+    margin: 10px;
+    font-style: oblique;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 20px;
+
+}
+
+#searchRes{
+    width:1000px;
+    margin:10px auto;
+    
+    color:white;
+    padding: 10px;
+}
+#searchResf{
+    width:2000px;
+    margin:10px auto;
+    margin-top: -10px;
+    color:white;
+    padding: 50px;
+}
+
+.res{
+    width: 1000px;
+    margin:20px auto;
+    color:black;
+    background-color: rgb(247, 230, 229);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+.resf{
+    width: 1670px;
+    margin:20px auto;
+    color:black;
+    background-color: rgb(247, 230, 229);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 70px;
+    margin-bottom: 100px;
+}
+
+.lab{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-style: oblique;
+    
+}
+.labf{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-style: oblique;
+    font-size: 20px;
+}
+
+.pRes{
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: oblique;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.pResf{
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: oblique;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.bRes{
+    display: inline;
+    float:right;
+    margin-top: -100px;
+    margin-right: 20px;
+
+    
+}
+.cartc{
+    
+    margin-top: 50px;
+    margin-right: 10px;
+    height:40px;
+    background-color: #E94B3CFF;
+    color:white;
+    border: 3px solid #ffffff;
+    transition: 0.3s;
+}
+.cartb{
+    
+
+    margin-top: 50px;
+    margin-right: 80px;
+    height:40px;
+    background-color: #E94B3CFF;
+    color:white;
+    border: 3px solid #ffffff;
+    transition: 0.3s;
+}
+
+#comHead{
+    width: fit-content;
+    padding: 10px;
+    margin: auto;
+    margin-top: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.headSpan{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+    background-color: #E94B3CFF;
+    color:white;
+}

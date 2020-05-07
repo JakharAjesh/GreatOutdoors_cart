@@ -1,0 +1,120 @@
+
+table{
+    width: 1500px;
+    margin: 100px auto 20px auto;
+    
+    background-color: rgb(247, 230, 229);
+    
+ 
+}
+thead{
+    background-color:#333;
+    color:white;
+}
+button{
+    margin:10px auto;
+ 
+    background-color: #E94B3CFF;
+    color:white;
+   
+    
+    transition: 0.3s;
+}
+button:hover{
+   
+    background-color: #E94B3CFF;
+    
+    color:white;
+    box-shadow: 1px 1px 8px #888888;
+   
+}
+
+#comHead{
+    width: fit-content;
+    padding: 10px;
+    margin: auto;
+    margin-top: 100px;
+    
+    font-weight: bold;
+}
+
+.headSpan{
+    background-color: #E94B3CFF;
+    color:white;
+}
+.bton{
+    position: relative;
+    align-items: center;
+    
+}
+.bton p{
+    position: absolute;
+    top:50%;
+}
+.pRes{
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: oblique;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#searchRes{
+    width:1000px;
+    margin:10px auto;
+    
+    color:white;
+    padding: 10px;
+}
+.res{
+    width: 1000px;
+    margin:20px auto;
+    color:black;
+    background-color: rgb(247, 230, 229);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+.bRes{
+    display: inline;
+    float:right;
+    margin-top: -100px;
+    margin-right: 20px;
+
+    
+}
+.cartc{
+    
+    margin-top: 65px;
+    margin-right: 10px;
+    height:40px;
+    background-color: #E94B3CFF;
+    color:white;
+    border: 3px solid #ffffff;
+    transition: 0.3s;
+}
+.cartb{
+    
+
+    margin-top: 65px;
+    margin-right: 85px;
+    height:40px;
+    background-color: #E94B3CFF;
+    color:white;
+    border: 3px solid #ffffff;
+    transition: 0.3s;
+}
+.lab{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-style: oblique;
+    
+}
+.labs{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-style: oblique;
+    margin-left: 400px;
+    font-size: 18px;
+    
+}

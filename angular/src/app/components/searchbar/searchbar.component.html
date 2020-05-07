@@ -1,0 +1,72 @@
+<div id="comHead"><h1><span class="headSpan">Great Outdoors</span><span class="headSpan"></span></h1></div>
+<form #formvar=ngForm (ngSubmit)="searchProduct()">
+    <div class="form-group mb-4 searchdiv">
+<input class="form-control search" #formsearch="ngModel" required pattern="^[0-9a-zA-Z]+$" [(ngModel)]="searchString" name="search" (click)="log(formsearch)"  ngModel type="text" placeholder="Search Name,Category or More..." >
+<div class="alert alert-danger" *ngIf="formsearch.touched && formsearch.invalid">
+    <div *ngIf="formsearch.errors.pattern">search should be in letters !</div>
+    <div *ngIf="formsearch.invalid">search is not allowed !</div>
+    <div *ngIf="formsearch.errors.required">field is required !</div>
+  
+  </div>
+  <div class="alert alert-danger" *ngIf="formvar.touched && formvar.invalid">Please search a product !</div>
+  <div class="alert alert-danger" *ngIf="errorLog!=undefined">{{errorLog}}</div>
+<button type="submit" class="btn btn-default searchb" (click)="showf()" [disabled]="formvar.touched && formvar.invalid">Search</button>
+</div>
+</form>
+
+<form #formvar=ngForm  *ngIf="showForm">
+
+
+    <div id="searchResf">
+        <div class="resf" >
+           
+                <div>
+                        <div class="pResf" ><span class="labf">Product Name:  </span>{{Name}}</div>
+                        <div class="pResf" ><span class="labf">Product Manufacturer:  </span>{{Manufacturer}}</div>
+                        <div class="pResf" ><span class="labf">Category:  </span>{{Category}}</div>
+                        <div class="pResf" ><span class="labf">About:  </span>{{Description}}</div>
+                        <div class="pResf" ><span class="labf">Cost:  &#8377;</span>{{cost}}</div>
+                        <div class="labRest" ><span class="lab">Quantity: </span> <select class="labRest" (change)="quanChange($event.target.value)">
+                                <option *ngFor="let t of test" >{{t}}</option></select></div>
+                        
+                     <div class="bRes" ><button  class="btn btn-default  cartb" (click)=click(Name,Manufacturer,Category,Description,cost) >Add to Cart</button></div>
+                     <div class="bRes" ><button  class="btn btn-default  cartc" (click)="form()" >cancel</button></div>
+                        
+                </div>
+        
+        
+            </div>
+        </div>
+        <div class="alert alert-success" role="alert" *ngIf="result">
+            Product ADDED Successfully!
+          </div>
+
+
+
+</form>
+
+
+<form id="searchRes" #formvar=ngForm  *ngIf="showForm2">        
+    <div class="labRes" *ngIf="search">Results </div>
+<div class="res" *ngFor="let product of products">
+   
+        <div>
+                <div class="pRes" ><span class="lab">Product Name:  </span>{{product.productName}}</div>
+                <div class="pRes" ><span class="lab">Product Manufacturer:  </span>{{product.productManufacturer}}</div>
+                <div class="pRes" ><span class="lab">Cost:  &#8377;</span>{{product.productcost}}</div>
+                <div class="labRest" ><span class="lab">Quantity: </span> <select class="labRest" (change)="quanChange($event.target.value)">
+                        <option *ngFor="let t of test" >{{t}}</option></select></div>
+                
+                <div class="bRes" ><button  class="btn btn-default  cartb" 
+                (click)="click(product.productName,product.productManufacturer,product.productCategory,product.productDescription,product.productcost)">Add to cart</button></div>
+                <div class="bRes" ><button  class="btn btn-default  cartc" 
+                (click)="show(product.productName,product.productManufacturer,product.productCategory,product.productDescription,product.productcost)" >View</button></div>
+        </div>
+
+
+
+</div>
+</form>
+<div class="alert alert-success" role="alert" *ngIf="result">
+        Product ADDED Successfully!
+      </div>

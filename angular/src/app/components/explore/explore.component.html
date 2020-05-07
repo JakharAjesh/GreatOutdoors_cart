@@ -1,0 +1,63 @@
+<div id="comHead"><h1><span class="headSpan">E   X   P   L   O   R   E</span></h1></div>
+<div class="labRes" >from a wide range of products</div>
+
+
+<form #formvar=ngForm  *ngIf="showForm">
+
+
+    <div id="searchResf" *ngIf="products.length>0">
+        <div class="resf" >
+           
+                <div>
+                        <div class="pResf" ><span class="labf">Product Name:  </span>{{Name}}</div>
+                        <div class="pResf" ><span class="labf">Product Manufacturer:  </span>{{Manufacturer}}</div>
+                        <div class="pResf" ><span class="labf">Category:  </span>{{Category}}</div>
+                        <div class="pResf" ><span class="labf">About:  </span>{{Description}}</div>
+                        <div class="pResf" ><span class="labf">Cost:  &#8377;</span>{{cost}}</div>
+                        <div class="labRest" ><span class="lab">Quantity: </span> <select class="labRest" (change)="quanChange($event.target.value)">
+                                <option *ngFor="let t of test" >{{t}}</option></select></div>
+                        
+                     <div class="bRes" ><button  class="btn btn-default  cartb" (click)=click(Name,Manufacturer,Category,Description,cost) >Add to Cart</button></div>
+                     <div class="bRes" ><button  class="btn btn-default  cartc" (click)="form()" >cancel</button></div>
+                        
+                </div>
+        
+        
+            </div>
+        </div>
+        <div class="alert alert-success" role="alert" *ngIf="result">
+            Product ADDED Successfully!
+          </div>
+
+
+
+</form>
+
+
+
+
+
+<form #formvar=ngForm  *ngIf="showForm2">
+<div id="searchRes" *ngIf="products.length>0">
+<div class="res" *ngFor="let product of products">
+   
+        <div>
+                <div class="pRes" ><span class="lab">Product Name:  </span>{{product.productName}}</div>
+                <div class="pRes" ><span class="lab">Product Manufacturer:  </span>{{product.productManufacturer}}</div>
+                <div class="pRes" ><span class="lab">Cost:  &#8377;</span>{{product.productcost}}</div>
+                <div class="labRest" ><span class="lab">Quantity: </span> <select class="labRest" (change)="quanChange($event.target.value)">
+                        <option *ngFor="let t of test" >{{t}}</option></select></div>
+                
+             <div class="bRes" ><button  class="btn btn-default  cartb" 
+                (click)="click(product.productName,product.productManufacturer,product.productCategory,product.productDescription,product.productcost)">Add to Cart</button></div>
+             <div class="bRes" ><button  class="btn btn-default  cartc" (click)="show(product.productName,product.productManufacturer,product.productCategory,product.productDescription,product.productcost)">View</button></div>
+                
+        </div>
+
+
+    </div>
+</div>
+<div class="alert alert-success" role="alert" *ngIf="result">
+        Product ADDED Successfully!
+      </div>
+</form>      

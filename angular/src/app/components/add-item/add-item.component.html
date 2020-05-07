@@ -1,0 +1,72 @@
+
+
+<div id="comHead"><h1><span class="headSpan">Ad</span>d <span class="headSpan">Pr</span>oduct</h1></div>
+
+<form #formvar=ngForm (ngSubmit)="sendProduct()">
+  <div class="form-group">
+    <label for="name" >Product Name</label>
+    <input type="text" #fnam="ngModel" required minlength="5" class="form-control" name="name" ngModel [(ngModel)]="product.productName">
+    <div class="alert alert-danger" *ngIf="fnam.touched && fnam.invalid">
+      <div *ngIf="fnam.errors.minlength">minimum letters should be 5 !</div>
+      <div *ngIf="fnam.errors.required">field is required !</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Product Description</label>
+    <input type="text" #fdes="ngModel" minlength="100" required class="form-control" name="des" ngModel [(ngModel)]="product.productDescription">
+    <div class="alert alert-danger" *ngIf="fdes.touched && fdes.invalid">
+      <div *ngIf="fdes.errors.minlength">minimum letters should be 100 !</div>
+      <div *ngIf="fdes.errors.required">field is required !</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="Manu">Manufacturer Details</label>
+    <input type="text" #fman="ngModel" minlength="5"  required class="form-control" name="man" ngModel [(ngModel)]="product.productManufacturer">
+    <div class="alert alert-danger" *ngIf="fman.touched && fman.invalid">
+      <div *ngIf="fman.errors.minlength">minimum letters should be 5 !</div>
+      <div *ngIf="fman.errors.required">field is required !</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="Cat">Product Category</label>
+    <select class="browser-default custom-select" required ngModel #select="ngModel" name="select" (change)="changeCat($event.target.value)">
+      <option selected *ngFor="let cat of Category">{{cat}}</option>
+     
+    </select>
+    <div class="alert alert-danger" *ngIf="select.touched && select.invalid">
+  
+      <div *ngIf="select.errors.required">field is required !</div>
+    </div>
+  </div>
+ 
+
+  <div class="form-group">
+    <label for="Quan">Product Quantity</label>
+    <input  #fquan="ngModel" pattern="^[0-9]+$" required class="form-control"name="quan" ngModel [(ngModel)]="product.productQuantity">
+    <div class="alert alert-danger" *ngIf="fquan.touched && fquan.invalid">
+      <div *ngIf="fquan.errors.pattern">quantity should be in number !</div>
+      <div *ngIf="fquan.invalid">alphabets are not allowed !</div>
+      <div *ngIf="fquan.errors.required">field is required !</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="cost">Product Cost</label>
+    <input  #fcost="ngModel" pattern="^[0-9]+(\.[0-9]{1,2})?$" required class="form-control" name="cost" ngModel [(ngModel)]="product.productcost">
+    <div class="alert alert-danger" *ngIf="fcost.touched && fcost.invalid">
+      <div *ngIf="fcost.errors.pattern">quantity should be in number !</div>
+      <div *ngIf="fcost.invalid">alphabets are not allowed !</div>
+      <div *ngIf="fcost.errors.required">field is required !</div>
+    </div>
+  </div>
+  <div class="alert alert-danger" *ngIf="formvar.touched && formvar.invalid">Please fill the form !</div>
+  <div class="alert alert-danger" *ngIf="errorLog!=undefined">{{errorLog}}</div>
+  <div class="alert alert-success" role="alert" *ngIf="success">
+    Product added Successfully!
+  </div>
+
+  <button type="submit" class="btn btn-default" [disabled]="formvar.touched && formvar.invalid">Add this Product</button>
+</form>

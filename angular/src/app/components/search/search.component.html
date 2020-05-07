@@ -1,0 +1,40 @@
+<div id="comHead"><h1><span class="headSpan">Se</span>arch <span class="headSpan">Pr</span>oduct</h1></div>
+    <form #formvar=ngForm (ngSubmit)="searchProduct()">
+            <div class="form-group mb-4 searchdiv">
+    <input class="form-control search" #formsearch="ngModel" required pattern="^[0-9a-zA-Z]+$" [(ngModel)]="searchString" name="search" (click)="log(formsearch)" ngModel type="text" placeholder="Search" >
+    <div class="alert alert-danger" *ngIf="formsearch.touched && formsearch.invalid">
+            <div *ngIf="formsearch.errors.pattern">search should be in letters !</div>
+            <div *ngIf="formsearch.invalid">search is not allowed !</div>
+            <div *ngIf="formsearch.errors.required">field is required !</div>
+          
+          </div>
+          <div class="alert alert-danger" *ngIf="formvar.touched && formvar.invalid">Please search a product !</div>
+          <div class="alert alert-danger" *ngIf="errorLog!=undefined">{{errorLog}}</div>
+    <button type="submit" class="btn btn-default searchb" [disabled]="formvar.touched && formvar.invalid">Search</button>
+</div>
+</form>
+
+
+<div id="searchRes" *ngIf="products.length>0">
+        <div class="labRes" >Results: </div>
+    <div class="res" *ngFor="let product of products">
+            <div>
+                    <div class="pRes" ><span class="lab">Product Name: </span>{{product.productName}}</div>
+                    <div class="pRes" ><span class="lab">Product Manufacturer: </span>{{product.productManufacturer}}</div>
+                    <div class="pRes" ><span class="lab">Category: </span>{{product.productCategory}}</div>
+                    <div class="pRes" ><span class="lab">About: </span>{{product.productDescription}}</div>
+                    <div class="pRes" ><span class="lab">Cost: &#8377; </span>{{product.productcost}}</div>
+                    <div class="labRest" ><span class="lab">Quantity: </span> <select class="labRest" (change)="quanChange($event.target.value)">
+                        <option *ngFor="let t of test" >{{t}}</option></select></div>
+                    <button type="submit" class="btn btn-default searchbB" [disabled]="formvar.touched && formvar.invalid" 
+                    (click)="click(product.productName,product.productManufacturer,product.productCategory,product.productDescription,product.productcost)">ADD TO CART</button>
+            </div>
+    </div>
+
+<div class="alert alert-success" role="alert" *ngIf="result">
+        Product Added Successfully!
+      </div>
+  
+    <div class="alert alert-danger" *ngIf="errorLog!=undefined">{{errorLog}}</div>
+</div>    
+ 

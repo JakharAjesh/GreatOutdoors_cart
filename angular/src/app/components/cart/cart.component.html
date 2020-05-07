@@ -1,0 +1,68 @@
+<div id="comHead"><h1><span class="headSpan">CART</span></h1></div>
+
+<form #formvar=ngForm  *ngIf="showForm">
+
+  <div id="searchRes">
+    <div class="res" >
+      <div class="pRes" ><span class="lab">Are you sure you want to Delete it  </span></div>
+      <div class="bRes" ><button  class="btn btn-default  cartb" (click)="deleteProduct(Id)">YES</button></div>
+      <div class="bRes" ><button  class="btn btn-default  cartc" (click)="showForm=false" >NO</button></div>
+
+    </div>
+  </div>
+
+</form>
+<table class="table ">
+    <thead class="black white-text">
+      <tr>
+        <th>Product Id</th>
+        <th >Name</th>
+        <th >Manufacturer</th>
+        <th>Quantity</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of getcart">
+        <th>{{product.productId}}</th>
+        <td>{{product.productName}}</td>
+        <td>{{product.productManufacturer}}</td>
+        <td><select><option *ngFor="let t of test" [selected]="t==product.productQuantity">{{t}}</option></select></td>
+        <td>{{product.productDescription}}</td>
+        <td>{{product.productcost}}</td>
+        <td><button class="btn btn-default" (click)="form(product.productId)"> DELETE </button></td>
+      </tr>
+ 
+    </tbody>
+  </table>
+  
+
+  <div class="alert alert-success" role="alert" *ngIf="result">
+      Product deleted Successfully!
+    </div>
+  
+    
+  
+<form #formvar=ngForm *ngIf="getcart.length==0">
+  
+  <div id="searchRes">
+    <div class="res" >
+  <div class="pRes" ><span class="labs" >Cart is Empty </span></div>
+    </div>
+  </div>
+</form>
+<form #formvar=ngForm>
+  
+  <div id="searchRes">
+    <div class="res" >
+  <div class="pRes" ><span class="labs" >Total Cart:  &#8377;</span>{{getTotalPrice()}}</div>
+    </div>
+  </div>
+</form>
+
+
+
+ 
+
